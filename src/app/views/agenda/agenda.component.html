@@ -1,0 +1,55 @@
+<div class="agenda-view-container">
+  <div class="agenda-controls-grid">
+    <div class="agenda-control-column">
+      <button mat-icon-button (click)="moveOneDayBack()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </div>
+    <div class="agenda-control-column">
+      <p class="day-name">
+        {{ dayName }}
+      </p>
+      <div class="current-day-container" (click)="resetCalendar()">
+        <p class="current-day">
+          {{ currentDay }}
+        </p>
+      </div>
+      <p class="day-name">
+        {{ monthName }}
+      </p>
+    </div>
+    <div class="agenda-control-column">
+      <button mat-icon-button (click)="moveOneDayForward()">
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="day-view-container">
+    <div class="hour-row" *ngFor="let hour of availableHours; trackBy: trackByHourId" (click)="goToSchedule(hour)">
+      <div class="hour-column">
+        <p>{{ hour.hour }}</p>
+      </div>
+      <div class="appointments-row"></div>
+    </div>
+    <div class="appointment-container"
+         [ngClass]="{
+            'confirmed-appointment': appointment.status === 1,
+            'rejected-appointment': appointment.status === 2
+           }"
+         *ngFor="let appointment of appointmentsList; let index = index; trackBy: trackByAppointmentId"
+         [style.height.px]="appointment.containerHeight"
+         [style.top.px]="appointment.topPosition"
+         (click)="!authService.isTypeUser() && openAppointmentDetails(appointment)">
+      <div>
+        <p class="service-name">
+          {{
+            appointment.serviceName !== 'Busy'
+              ? appointment.userName
+              : ('SCHEDULE.BUSY' | translate)
+          }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

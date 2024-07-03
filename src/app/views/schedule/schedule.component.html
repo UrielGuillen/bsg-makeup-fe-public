@@ -1,0 +1,207 @@
+<div class="schedule-container">
+  <mat-vertical-stepper [linear]="false" [animationDuration]="'500'">
+    <mat-step [stepControl]="clientDataForm" [errorMessage]="'SCHEDULE.STEP_ADMIN_ERROR' | translate" *ngIf="isUserAllowed">
+      <form [formGroup]="clientDataForm">
+        <ng-template matStepLabel>
+          {{ 'SCHEDULE.CLIENT_DATA' | translate }}
+        </ng-template>
+
+        <div class="client-selector">
+          <mat-button-toggle-group formControlName="userExists">
+            <mat-button-toggle [value]="true">
+              {{ 'SCHEDULE.STEP_ADMIN_CLIENT_REGISTERED' | translate }}
+            </mat-button-toggle>
+            <mat-button-toggle [value]="false">
+              {{ 'SCHEDULE.STEP_ADMIN_NEW_CLIENT' | translate }}
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+
+        <ng-template [ngIf]="clientDataForm.controls['userExists'].value === true">
+          <mat-form-field>
+            <mat-label>
+              {{ 'SCHEDULE.SELECT_AN_OPTION' | translate }}
+            </mat-label>
+            <mat-select formControlName="userSelected">
+              <mat-option *ngFor="let user of manualUsers; trackBy: trackByUserId" [value]="user.id" (onSelectionChange)="onUserSelected(user)">
+                {{ user.name + " " + user.phone}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </ng-template>
+
+        <ng-template [ngIf]="clientDataForm.controls['userExists'].value === false">
+          <mat-form-field>
+            <mat-label>
+              {{ 'SCHEDULE.NAME' | translate }}
+            </mat-label>
+            <input matInput formControlName="name" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>
+              {{ 'SCHEDULE.LAST_NAME' | translate }}
+            </mat-label>
+            <input matInput formControlName="lastName" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>
+              {{ 'SCHEDULE.PHONE' | translate }}
+            </mat-label>
+            <input matInput type="number" formControlName="phone" />
+          </mat-form-field>
+        </ng-template>
+
+        <button mat-raised-button matStepperNext class="btn btn-primary">
+          {{ 'SCHEDULE.NEXT' | translate }}
+        </button>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="selectDateForm" [errorMessage]="'SCHEDULE.STEP_ONE_ERROR' | translate">
+      <form [formGroup]="selectDateForm">
+        <ng-template matStepLabel>
+          {{ 'SCHEDULE.SELECT_THE_DATE' | translate }}
+        </ng-template>
+        <mat-form-field>
+          <mat-label>
+            {{ 'SCHEDULE.DATE' | translate }}
+          </mat-label>
+          <input matInput formControlName="date" [matDatepicker]="selectedDate" />
+          <mat-datepicker-toggle matIconSuffix [for]="selectedDate">
+            <mat-icon matDatepickerToggleIcon>event</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker #selectedDate [disabled]="false"></mat-datepicker>
+        </mat-form-field>
+
+        <div class="time-selector">
+          <mat-form-field>
+            <mat-label>
+              {{ 'SCHEDULE.SELECT_THE_TIME' | translate }}
+            </mat-label>
+            <input
+              matInput
+              [format]="24"
+              [min]="startEndTime.start"
+              [max]="startEndTime.end"
+              formControlName="time"
+              [ngxMatTimepicker]="timeSelector"
+              readonly />
+            <mat-icon matSuffix (click)="timeSelector.open()">schedule</mat-icon>
+          </mat-form-field>
+          <ngx-mat-timepicker #timeSelector [minutesGap]="30"></ngx-mat-timepicker>
+        </div>
+        <button mat-raised-button matStepperNext class="btn btn-primary">
+          {{ 'SCHEDULE.NEXT' | translate }}
+        </button>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="selectServiceForm" [errorMessage]="'SCHEDULE.STEP_TWO_ERROR' | translate">
+      <form [formGroup]="selectServiceForm">
+        <ng-template matStepLabel>
+          {{ 'SCHEDULE.SELECT_YOUR_SERVICE' | translate }}
+        </ng-template>
+        <mat-form-field>
+          <mat-label>
+            {{ 'SCHEDULE.SELECT_AN_OPTION' | translate }}
+          </mat-label>
+          <mat-select formControlName="service">
+            <mat-option *ngFor="let item of servicesList; trackBy: trackByServiceId" [value]="item.id">
+              {{ item.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-raised-button matStepperNext class="btn btn-primary">
+          {{ 'SCHEDULE.NEXT' | translate }}
+        </button>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>
+        {{ 'SCHEDULE.REVIEW' | translate }}
+      </ng-template>
+      <div class="service-selected-container">
+        <div class="service-data-container">
+          <mat-icon>today</mat-icon>
+          <div>
+            <p class="service-selected-title">
+              {{ 'SCHEDULE.DATE_SELECTED' | translate }}
+            </p>
+            <p class="service-selected-description">
+              {{ selectDateForm.controls['date'].value | date: 'mediumDate' }}
+            </p>
+          </div>
+        </div>
+
+        <div class="service-data-container" *ngIf="selectDateForm.valid">
+          <mat-icon>schedule</mat-icon>
+          <div>
+            <p class="service-selected-title">
+              {{ 'SCHEDULE.TIME_SELECTED' | translate }}
+            </p>
+            <p class="service-selected-description">
+              {{ selectDateForm.controls['time'].value }}
+            </p>
+          </div>
+        </div>
+
+        <div class="service-data-container" *ngIf="selectedService">
+          <mat-icon>design_services</mat-icon>
+          <div>
+            <p class="service-selected-title">
+              {{ 'SCHEDULE.SERVICE_SELECTED' | translate }}
+            </p>
+            <p class="service-selected-description">
+              {{ selectedService.name }}
+            </p>
+          </div>
+        </div>
+
+        <div class="service-data-container" *ngIf="selectedService">
+          <mat-icon>timelapse</mat-icon>
+          <div>
+            <p class="service-selected-title">
+              {{ 'SCHEDULE.AVERAGE_TIME' | translate }}
+            </p>
+            <p class="service-selected-description">
+              {{ selectedService.time | minutesToHours }}
+            </p>
+          </div>
+        </div>
+
+        <div class="service-data-container" *ngIf="selectedService">
+          <mat-icon>attach_money</mat-icon>
+          <div>
+            <p class="service-selected-title">
+              {{ 'SCHEDULE.COST' | translate }}
+            </p>
+            <p class="service-selected-description">
+              {{ selectedService.cost | currency: '$' }}
+            </p>
+          </div>
+        </div>
+
+        <div class="service-data-container" *ngIf="isUserAllowed && clientDataForm.valid">
+          <mat-icon>person</mat-icon>
+          <div>
+            <p class="service-selected-title">
+              {{
+                clientDataForm.controls['userExists'].value === true ?
+                  (selectedUser.name + ' ' + selectedUser.lastName) :
+                  (clientDataForm.controls['name'].value + ' ' + clientDataForm.controls['lastName'].value)
+              }}
+            </p>
+            <p class="service-selected-description">
+              {{
+                clientDataForm.controls['userExists'].value === true
+                  ? selectedUser.phone
+                  : clientDataForm.controls['phone'].value
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <button mat-raised-button class="btn btn-primary" (click)="validateForm()">
+        {{ 'SCHEDULE.SCHEDULE_APPOINTMENT' | translate }}
+      </button>
+    </mat-step>
+  </mat-vertical-stepper>
+</div>

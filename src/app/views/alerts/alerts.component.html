@@ -1,0 +1,44 @@
+<div class="alerts-view-container" *ngIf="notificationsList$ | async as notificationsList">
+  <div class="bulk-alert-actions-container">
+    <button mat-icon-button [disabled]="notificationsList.length === 0" (click)="deleteAllNotifications()">
+      <mat-icon>delete_sweep</mat-icon>
+    </button>
+    <button mat-icon-button [disabled]="!isMarkAllAvailable(notificationsList)" (click)="markAllAsRead()">
+      <mat-icon>done_all</mat-icon>
+    </button>
+  </div>
+  <div class="alert-card" [ngClass]="{'unread' : !alert.hasBeenRead}"
+       *ngFor="let alert of notificationsList; trackBy: trackByNotificationId">
+    <div class="icon-container">
+      <mat-icon>{{ alert.icon }}</mat-icon>
+    </div>
+    <div class="alert-data-container">
+      <div class="alert-title-container">
+        <p class="alert-title">{{ alert.title }}</p>
+        <p class="alert-created">{{ alert.createdAt | timeAgo }}</p>
+      </div>
+      <p class="alert-content">{{ alert.content }}</p>
+    </div>
+    <div class="alert-actions-container">
+      <button mat-icon-button [disableRipple]="true" [matMenuTriggerFor]="notificationsMenu"
+        [matMenuTriggerData]="{ alertId: alert.id, isRead: alert.hasBeenRead }">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+
+<mat-menu #notificationsMenu="matMenu" xPosition="after" yPosition="below">
+  <ng-template matMenuContent let-alertId="alertId" let-isRead="isRead">
+    <button mat-menu-item (click)="markNotificationAsRead(alertId)" *ngIf="!isRead">
+    <span>
+      {{ "ALERTS_VIEW.MARK_AS_READ" | translate }}
+    </span>
+    </button>
+    <button mat-menu-item (click)="deleteNotification(alertId)">
+    <span>
+      {{ "ALERTS_VIEW.DELETE" | translate }}
+    </span>
+    </button>
+  </ng-template>
+</mat-menu>

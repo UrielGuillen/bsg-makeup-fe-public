@@ -1,0 +1,43 @@
+.mat-drawer {
+  background-color: transparent;
+}
+
+.view-container {
+  padding: 12px;
+  max-height: calc(100% - 84px);
+  min-height: calc(100% - 84px);
+  overflow-y: scroll;
+
+  &.internal-view {
+    max-height: calc(100% - 170px);
+    min-height: calc(100% - 170px);
+  }
+
+  &.home-view {
+    padding: 0;
+    max-height: calc(100% - 60px);
+    min-height: calc(100% - 60px);
+  }
+}
+
+.loader-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-shadow);
+  z-index: 10;
+
+  .loader-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.hidden-bottom-navigation {
+  display: none;
+}

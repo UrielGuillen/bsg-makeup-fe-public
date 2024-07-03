@@ -1,0 +1,35 @@
+.schedule-container {
+  ::ng-deep {
+    .mat-step-icon-selected {
+      background-color: var(--primary-nude-300);
+      color: var(--primary-black);
+    }
+    .mat-step-text-label {
+      color: var(--primary-black);
+      font-family: var(--primary-font-family);
+    }
+  }
+
+  .client-selector {
+    margin-bottom: 12px;
+  }
+
+  .service-selected-container {
+    padding: 12px 0 24px;
+
+    .service-data-container {
+      display: flex;
+      align-items: center;
+      padding-bottom: 12px;
+
+      .service-selected-title {
+        padding-left: 12px;
+      }
+
+      .service-selected-description {
+        font-weight: 700;
+        padding: 6px 0 0 12px;
+      }
+    }
+  }
+}

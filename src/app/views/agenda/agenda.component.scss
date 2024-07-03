@@ -1,0 +1,113 @@
+.agenda-view-container {
+  .agenda-controls-grid {
+    display: grid;
+    grid-template-areas: 'c1 c2 c3';
+    grid-template-columns: 24px 1fr 24px;
+    margin-bottom: 24px;
+
+    .agenda-control-column {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:nth-child(1) {
+        grid-area: c1;
+      }
+      &:nth-child(2) {
+        grid-area: c2;
+
+        .day-name {
+          font-weight: 700;
+          text-transform: capitalize;
+        }
+
+        .current-day-container {
+          width: 48px;
+          height: 48px;
+          background-color: var(--primary-nude-300);
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 12px;
+          margin-right: 12px;
+
+          .current-day {
+            color: var(--primary-black);
+            font-weight: 700;
+          }
+        }
+
+        mat-icon {
+          color: var(--primary-black);
+        }
+      }
+      &:nth-child(3) {
+        grid-area: c3;
+      }
+
+      mat-icon {
+        color: var(--primary-black);
+      }
+    }
+  }
+
+  .day-view-container {
+    margin-bottom: 24px;
+    position: relative;
+
+    .hour-row {
+      display: flex;
+      height: 50px;
+    }
+
+    .hour-column {
+      border-right: 1px solid var(--primary-black);
+      width: 56px;
+      padding-right: 8px;
+
+      p {
+        color: var(--primary-black);
+        text-decoration: underline;
+        font-weight: 500;
+      }
+    }
+
+    .appointments-row {
+      flex: 1;
+      border-bottom: 1px solid var(--primary-black);
+    }
+
+    .appointment-container {
+      position: absolute;
+      left: 20%;
+      right: 0;
+      border: 2px solid var(--primary-nude-600);
+      border-left-width: 8px;
+      background-color: var(--primary-nude-50);
+      padding: 4px;
+      border-radius: 4px;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .service-name {
+        text-transform: capitalize;
+        font-weight: 700;
+      }
+
+      &.confirmed-appointment {
+        border: 2px solid var(--primary-green);
+        background-color: var(--secondary-green);
+        border-left-width: 8px;
+      }
+
+      &.rejected-appointment {
+        border: 2px solid var(--primary-red);
+        background-color: var(--secondary-red);
+        border-left-width: 8px;
+      }
+    }
+  }
+}

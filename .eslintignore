@@ -1,0 +1,10 @@
+coverage
+dist
+
+karma.conf.js
+
+src/test.ts
+src/environment/*.*.ts
+
+src/firebase-messaging-sw.js
+src/manifest.json

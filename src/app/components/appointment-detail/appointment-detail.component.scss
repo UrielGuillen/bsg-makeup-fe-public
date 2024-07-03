@@ -1,0 +1,70 @@
+.mat-mdc-dialog-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  height: 60px;
+  min-height: 60px;
+
+  &:before {
+    display: none;
+  }
+
+  h3 {
+    font-family: var(--primary-titles-font-family) !important;
+    color: var(--primary-black);
+  }
+
+  mat-icon {
+    color: var(--primary-black);
+  }
+}
+
+.mat-mdc-dialog-content {
+  padding: 12px !important;
+
+  .service-data-container {
+    display: flex;
+    align-items: center;
+    padding-bottom: 12px;
+
+    .service-selected-title {
+      padding-left: 12px;
+    }
+
+    .service-selected-description {
+      font-weight: 700;
+      padding: 6px 0 0 12px;
+    }
+
+    mat-icon {
+      color: var(--primary-nude-600);
+    }
+
+    .confirmed-appointment {
+      color: var(--primary-green);
+    }
+
+    .rejected-appointment {
+      color: var(--primary-red);
+    }
+  }
+}
+
+.mat-mdc-dialog-actions {
+  ::ng-deep {
+    .mdc-button {
+      font-family: var(--primary-font-family);
+      border: none;
+      color: var(--primary-white);
+
+      &:nth-child(1) {
+        background-color: var(--primary-red);
+      }
+
+      &:nth-child(2) {
+        background-color: var(--primary-green);
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+<div class="services-container">
+  <ng-template
+    [ngTemplateOutlet]="serviceCards"
+    [ngTemplateOutletContext]="{
+      serviceName: 'SERVICES.EYEBROW',
+      groupBy: 'eyebrow'
+    }"></ng-template>
+
+  <ng-template
+    [ngTemplateOutlet]="serviceCards"
+    [ngTemplateOutletContext]="{
+      serviceName: 'SERVICES.MAKEUP',
+      groupBy: 'makeup'
+    }"></ng-template>
+
+  <ng-template
+    [ngTemplateOutlet]="serviceCards"
+    [ngTemplateOutletContext]="{
+      serviceName: 'SERVICES.EYELASH',
+      groupBy: 'eyelash'
+    }"></ng-template>
+
+  <ng-template
+    [ngTemplateOutlet]="serviceCards"
+    [ngTemplateOutletContext]="{
+      serviceName: 'SERVICES.FACE_WAX',
+      groupBy: 'face_wax'
+    }"></ng-template>
+
+  <ng-template
+    [ngTemplateOutlet]="serviceCards"
+    [ngTemplateOutletContext]="{
+      serviceName: 'SERVICES.FACE_THREAD',
+      groupBy: 'face_thread'
+    }"></ng-template>
+</div>
+
+<ng-template #serviceCards let-groupBy="groupBy" let-serviceName="serviceName">
+  <div class="services-catalog-container">
+    <p class="service-group-name">
+      {{ serviceName | translate }}
+    </p>
+    <ng-template [ngTemplateOutlet]="loadingCards"></ng-template>
+    <div class="service-catalog-container" *ngIf="!loadingElements && groupServicesBy(groupBy) as services">
+      <div class="service-card" *ngFor="let item of services; trackBy: trackByServiceId">
+        <img alt="" class="service-card-image" [src]="item.description" />
+        <div class="service-card-container">
+          <div>
+            <div class="data-container">
+              <mat-icon>design_services</mat-icon>
+              <p>{{ item.name | translate }}</p>
+            </div>
+            <div class="data-container">
+              <mat-icon>timelapse</mat-icon>
+              <p>{{ item.time | minutesToHours }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #loadingCards>
+  <div class="loading-cards-container" *ngIf="loadingElements">
+    <div class="loader-container">
+      <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    </div>
+  </div>
+</ng-template>

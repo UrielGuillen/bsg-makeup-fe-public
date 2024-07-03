@@ -1,0 +1,41 @@
+<div class="side-nav-menu-container" [ngClass]="{ 'reverse-sidenav': sidenavPosition === 'end' }">
+  <div class="menu-items-container">
+    <div class="menu header-item">
+      <p class="menu-title">
+        {{ 'SIDENAV.TITLE' | translate }}
+      </p>
+      <mat-icon class="menu-icon" (click)="closeSideNavMenu()">close</mat-icon>
+    </div>
+    <div class="menu item" [routerLink]="['/', 'services']" (click)="closeSideNavMenu()">
+      <p class="menu-title">
+        {{ 'SIDENAV.SERVICES' | translate }}
+      </p>
+      <mat-icon class="menu-icon">work</mat-icon>
+    </div>
+    <div class="menu item" [routerLink]="['/', 'agenda']" (click)="closeSideNavMenu()">
+      <p class="menu-title">
+        {{ 'SIDENAV.AGENDA' | translate }}
+      </p>
+      <mat-icon class="menu-icon">calendar_month</mat-icon>
+    </div>
+    <div class="menu item">
+      <p class="menu-title">
+        {{ 'SIDENAV.LANGUAGE' | translate }}
+      </p>
+      <mat-button-toggle-group name="language-selector" (change)="changeLanguage($event)">
+        <mat-button-toggle value="en" [checked]="selectedLanguage === 'en'">EN</mat-button-toggle>
+        <mat-button-toggle value="es" [checked]="selectedLanguage === 'es'">ES</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <div class="menu item" (click)="signOut()">
+      <p class="menu-title">
+        {{ 'SIDENAV.LOG_OUT' | translate }}
+      </p>
+      <mat-icon class="menu-icon">logout</mat-icon>
+    </div>
+  </div>
+
+  <div class="logo-container">
+    <img alt="" [src]="logoUrl" />
+  </div>
+</div>

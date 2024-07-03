@@ -1,0 +1,102 @@
+<div class="home">
+  <div class="section-one">
+    <div class="s1-background">
+      <div>
+        <h1>{{ 'HOME.SECTION_ONE.TITLE' | translate }}</h1>
+        <p>{{ 'HOME.SECTION_ONE.DESCRIPTION' | translate }}</p>
+        <div class="buttons-container">
+          <button mat-raised-button class="btn btn-primary" [ngClass]="{ 'btn-logged': isUserAuthenticated }" [routerLink]="getRoute()">
+            {{ 'HOME.SECTION_ONE.SCHEDULE_APPOINTMENT' | translate }}
+          </button>
+          <button mat-raised-button class="btn btn-primary" *ngIf="!isUserAuthenticated" [routerLink]="['/sign-up']">Crear cuenta</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-two">
+    <div class="image-container"></div>
+    <h1>{{ 'HOME.SECTION_TWO.TITLE' | translate }}</h1>
+    <p>{{ 'HOME.SECTION_TWO.DESCRIPTION' | translate }}</p>
+  </div>
+  <div class="section-three">
+    <h1>{{ 'HOME.SECTION_THREE.TITLE' | translate }}</h1>
+    <div class="service-list-container">
+      <div class="service-card" *ngFor="let service of homeServices; trackBy: trackByServiceId">
+        <img alt="" class="service-card-image" [src]="service.serviceImageUrl" />
+        <div class="service-card-title">
+          <p>{{ service.title | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section-four" *ngIf="!isUserAuthenticated">
+    <h1>{{ 'HOME.SECTION_FOUR.TITLE' | translate }}</h1>
+    <p>{{ 'HOME.SECTION_FOUR.DESCRIPTION' | translate }}</p>
+    <form [formGroup]="contactForm">
+      <mat-form-field>
+        <mat-label>
+          {{ 'HOME.SECTION_FOUR.FORM_NAME' | translate }}
+        </mat-label>
+        <input matInput type="text" formControlName="name" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>
+          {{ 'HOME.SECTION_FOUR.FORM_PHONE_NUMBER' | translate }}
+        </mat-label>
+        <input matInput type="number" formControlName="phone" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>
+          {{ 'HOME.SECTION_FOUR.FORM_MESSAGE' | translate }}
+        </mat-label>
+        <textarea matInput type="text" formControlName="message" rows="4" [maxLength]="100"></textarea>
+        <mat-hint align="end">
+          {{ 'HOME.SECTION_FOUR.CHARACTERS_REMAINING' | translate }}
+          {{ contactForm.controls['message'].value.length + '/100' }}
+        </mat-hint>
+      </mat-form-field>
+      <button mat-raised-button class="btn btn-primary" [disabled]="contactForm.invalid" (click)="createContactUser()">
+        {{ 'HOME.SECTION_FOUR.SEND' | translate }}
+      </button>
+    </form>
+    <div class="custom-shape-divider-bottom-1701218034">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path
+          d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+          class="shape-fill"></path>
+      </svg>
+    </div>
+  </div>
+  <div class="section-six">
+    <h1>{{ 'HOME.SECTION_SIX.TITLE' | translate }}</h1>
+    <google-map #googleMaps [options]="mapOptions" [width]="'100%'" [height]="'500px'">
+      <map-circle *ngIf="mapCircleOptions" [options]="mapCircleOptions"></map-circle>
+    </google-map>
+  </div>
+  <div class="section-five">
+    <h1>{{ 'HOME.SECTION_FIVE.TITLE' | translate }}</h1>
+    <p>{{ 'HOME.SECTION_FIVE.DESCRIPTION' | translate }}</p>
+
+    <mat-list>
+      <ng-template ngFor let-certification [ngForOf]="certifications">
+        <div mat-subheader>
+          {{ certification.title | translate }}
+        </div>
+        <mat-list-item *ngFor="let item of certification.items">
+          <mat-icon matListItemIcon>
+            {{ certification.id === 1 ? 'verified_user' : 'workspace_premium' }}
+          </mat-icon>
+          <div matListItemTitle>
+            {{ item | translate }}
+          </div>
+        </mat-list-item>
+      </ng-template>
+    </mat-list>
+  </div>
+  <div class="home-footer">
+    <img alt="Logo" [src]="assetsPrefixUrl + '/icons/LogoMedium=NudeDeluxe.svg'" />
+    <p>BSG Makeup powered by Uriel Services</p>
+    <p>All rights reserved 2023</p>
+    <p>App version {{ appVersion }}</p>
+  </div>
+</div>

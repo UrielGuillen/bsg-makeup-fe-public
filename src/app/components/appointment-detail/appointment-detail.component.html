@@ -1,0 +1,119 @@
+<div mat-dialog-title>
+  <h3>{{ "HEADER.TITLES.APPOINTMENT_DETAILS" | translate }}</h3>
+  <mat-icon [mat-dialog-close]="-1">close</mat-icon>
+</div>
+<mat-dialog-content>
+  <div class="service-data-container">
+    <mat-icon [ngClass]="{
+            'confirmed-appointment': appointment.status === 1,
+            'rejected-appointment': appointment.status === 2
+           }">person</mat-icon>
+    <div>
+      <p class="service-selected-description">
+        {{ appointment.userName }}
+      </p>
+      <p class="service-selected-description">
+        {{ appointment.userPhoneNumber }}
+      </p>
+    </div>
+  </div>
+
+  <div class="service-data-container">
+    <mat-icon [ngClass]="{
+            'confirmed-appointment': appointment.status === 1,
+            'rejected-appointment': appointment.status === 2
+           }"
+    >{{getAppointmentStatusIcon(appointment.status)}}</mat-icon>
+    <div>
+      <p class="service-selected-title">
+        {{ "APPOINTMENT_DETAILS.STATUS" | translate }}
+      </p>
+      <p class="service-selected-description">
+        {{ getAppointmentStatusText(appointment.status) | translate }}
+      </p>
+    </div>
+  </div>
+
+  <div class="service-data-container">
+    <mat-icon [ngClass]="{
+            'confirmed-appointment': appointment.status === 1,
+            'rejected-appointment': appointment.status === 2
+           }">today</mat-icon>
+    <div>
+      <p class="service-selected-title">
+        {{ 'APPOINTMENT_DETAILS.DATE_SELECTED' | translate }}
+      </p>
+      <p class="service-selected-description">
+        {{ appointment.scheduledDate | date: 'mediumDate' }}
+      </p>
+    </div>
+  </div>
+
+  <div class="service-data-container">
+    <mat-icon [ngClass]="{
+            'confirmed-appointment': appointment.status === 1,
+            'rejected-appointment': appointment.status === 2
+           }">schedule</mat-icon>
+    <div>
+      <p class="service-selected-title">
+        {{ 'APPOINTMENT_DETAILS.TIME_SELECTED' | translate }}
+      </p>
+      <p class="service-selected-description">
+        {{ appointment.time }}
+      </p>
+    </div>
+  </div>
+
+  <div class="service-data-container">
+    <mat-icon [ngClass]="{
+            'confirmed-appointment': appointment.status === 1,
+            'rejected-appointment': appointment.status === 2
+           }">design_services</mat-icon>
+    <div>
+      <p class="service-selected-title">
+        {{ 'APPOINTMENT_DETAILS.SERVICE_SELECTED' | translate }}
+      </p>
+      <p class="service-selected-description">
+        {{ appointment.serviceName }}
+      </p>
+    </div>
+  </div>
+
+  <div class="service-data-container">
+    <mat-icon [ngClass]="{
+            'confirmed-appointment': appointment.status === 1,
+            'rejected-appointment': appointment.status === 2
+           }">timelapse</mat-icon>
+    <div>
+      <p class="service-selected-title">
+        {{ 'APPOINTMENT_DETAILS.AVERAGE_TIME' | translate }}
+      </p>
+      <p class="service-selected-description">
+        {{ appointment.serviceTime | minutesToHours }}
+      </p>
+    </div>
+  </div>
+
+  <div class="service-data-container">
+    <mat-icon [ngClass]="{
+            'confirmed-appointment': appointment.status === 1,
+            'rejected-appointment': appointment.status === 2
+           }">attach_money</mat-icon>
+    <div>
+      <p class="service-selected-title">
+        {{ 'APPOINTMENT_DETAILS.COST' | translate }}
+      </p>
+      <p class="service-selected-description">
+        {{ appointment.serviceCost | currency: '$' }}
+      </p>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions [align]="'center'" *ngIf="appointment.status === 0">
+  <button class="secondary-button" mat-stroked-button (click)="closeAppointmentDetail(2)">
+    {{ "APPOINTMENT_DETAILS.REJECT" | translate }}
+  </button>
+  <button class="primary-button" mat-stroked-button (click)="closeAppointmentDetail(1)">
+    {{ "APPOINTMENT_DETAILS.CONFIRM" | translate }}
+  </button>
+</mat-dialog-actions>

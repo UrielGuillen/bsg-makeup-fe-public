@@ -1,0 +1,50 @@
+<div class="user-profile-container">
+  <form [formGroup]="userForm" *ngIf="userData">
+    <div class="profile-photo-container">
+      <div class="profile-photo">
+        <mat-icon class="default-profile" *ngIf="!userData.profileUrl">account_circle</mat-icon>
+        <img alt="" [src]="photoUrl" *ngIf="userData.profileUrl" />
+        <div class="edit-photo-container" (click)="changePhoto.click()">
+          <mat-icon>add_a_photo</mat-icon>
+          <input type="file" #changePhoto (change)="onImageSelected($event)" accept="image/*" style="display: none" />
+        </div>
+      </div>
+    </div>
+    <div class="user-data-form">
+      <div class="user-name-container">
+        <mat-form-field>
+          <mat-label>
+            {{ 'PROFILE.NAME' | translate }}
+          </mat-label>
+          <input matInput type="text" formControlName="name" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>
+            {{ 'PROFILE.LAST_NAME' | translate }}
+          </mat-label>
+          <input matInput type="text" formControlName="lastName" />
+        </mat-form-field>
+      </div>
+      <div class="contact-user-data">
+        <mat-form-field>
+          <mat-label>
+            {{ 'PROFILE.EMAIL' | translate }}
+          </mat-label>
+          <input matInput type="text" formControlName="email" />
+        </mat-form-field>
+      </div>
+      <div class="contact-user-data">
+        <mat-form-field>
+          <mat-label>
+            {{ 'PROFILE.PHONE_NUMBER' | translate }}
+          </mat-label>
+          <input matInput type="text" formControlName="phoneNumber" />
+          <mat-hint>{{ 'PROFILE.PHONE_NUMBER_HINT' | translate }}</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+    <button mat-raised-button class="btn btn-primary" (click)="validateForm()">
+      {{ 'PROFILE.UPDATE' | translate }}
+    </button>
+  </form>
+</div>

@@ -1,0 +1,19 @@
+image: node:18
+
+pipelines:
+  default:
+    - parallel:
+        - step:
+            name: Install dependencies
+            caches:
+              - node
+            script:
+              - npm install
+              - npm install -g @angular/cli
+        - step:
+            name: Build app
+            script:
+              - npm install
+              - npm run build
+            caches:
+              - node

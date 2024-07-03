@@ -1,0 +1,83 @@
+.alerts-view-container {
+  margin-bottom: 24px;
+
+  .bulk-alert-actions-container {
+    padding: 12px 0 12px 12px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    mat-icon {
+      color: var(--primary-black);
+    }
+
+    .mat-mdc-button-disabled {
+      mat-icon {
+        color: var(--black-shadow);
+      }
+    }
+  }
+
+  .alert-card {
+    min-height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 8px 0 8px 12px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary-nude-50);
+    background-color: var(--primary-nude-50);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.unread {
+      border: 1px solid var(--primary-nude-200);
+      background-color: var(--primary-nude-100);
+    }
+
+    .icon-container {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .alert-data-container {
+      width: 100%;
+
+      .alert-title-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 8px;
+
+        .alert-title {
+          font-weight: 600;
+          margin-right: 8px;
+        }
+
+        .alert-created {
+          color: var(--primary-nude-500);
+          font-size: 12px;
+        }
+      }
+
+      .alert-content {
+        font-size: 14px;
+      }
+    }
+
+    .alert-actions-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      width: 48px;
+    }
+  }
+}

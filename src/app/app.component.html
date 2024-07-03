@@ -1,0 +1,28 @@
+<mat-drawer-container [hasBackdrop]="true">
+  <mat-drawer [mode]="'over'" [opened]="isSidenavMenuOpened" [position]="sideNavPosition" (closed)="closeSideNavMenu()">
+    <app-sidenav-menu
+      [selectedLanguage]="defaultLanguage"
+      [sidenavPosition]="sideNavPosition"
+      (closeSideNavMenuEvent)="closeSideNavMenu()"
+      (setLanguageEvent)="setLanguage($event)"></app-sidenav-menu>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (openSideNavEvent)="openSideNav('start')"></app-header>
+    <div
+      class="view-container"
+      [ngClass]="{
+        'internal-view': showBottomNavigation,
+        'home-view': !showBottomNavigation
+      }">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="loader-view" *ngIf="showLoader">
+      <div class="loader-container">
+        <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+      </div>
+    </div>
+    <div [ngClass]="{ 'hidden-bottom-navigation': !showBottomNavigation }">
+      <app-bottom-navigation (openSideNavEvent)="openSideNav('end')"></app-bottom-navigation>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

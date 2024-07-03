@@ -1,0 +1,25 @@
+import { Certifications } from '../interfaces/certifications.interface';
+
+export const CERTIFICATIONS: Array<Certifications> = [
+  {
+    id: 1,
+    title: 'HOME.SECTION_FIVE.CERTIFICATIONS.TITLE',
+    items: [
+      'HOME.SECTION_FIVE.CERTIFICATIONS.CERTIFICATION1',
+      'HOME.SECTION_FIVE.CERTIFICATIONS.CERTIFICATION2',
+      'HOME.SECTION_FIVE.CERTIFICATIONS.CERTIFICATION3',
+    ],
+  },
+  {
+    id: 2,
+    title: 'HOME.SECTION_FIVE.COURSES.TITLE',
+    items: [
+      'HOME.SECTION_FIVE.COURSES.COURSE1',
+      'HOME.SECTION_FIVE.COURSES.COURSE2',
+      'HOME.SECTION_FIVE.COURSES.COURSE3',
+      'HOME.SECTION_FIVE.COURSES.COURSE4',
+      'HOME.SECTION_FIVE.COURSES.COURSE5',
+      'HOME.SECTION_FIVE.COURSES.COURSE6',
+    ],
+  },
+];

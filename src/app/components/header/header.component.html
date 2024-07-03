@@ -1,0 +1,56 @@
+<div class="app-header-container" [ngClass]="{ 'home-header': isHome }">
+  <div class="header-grid">
+    <div class="header-column">
+      <button mat-icon-button (click)="openSideNav()" *ngIf="isUserAuthenticated && isHome">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <button mat-icon-button (click)="goBack()" *ngIf="!isHome">
+        <mat-icon>arrow_back_ios_new</mat-icon>
+      </button>
+    </div>
+    <div class="header-column">
+      <img alt="" [src]="logoUrl" *ngIf="isHome" />
+
+      <h1 class="internal-view-title" *ngIf="!isHome">
+        {{ headerTitle | translate }}
+      </h1>
+    </div>
+    <div class="header-column">
+      <button mat-icon-button [matMenuTriggerFor]="userMenu" *ngIf="isUserAuthenticated">
+        <mat-icon *ngIf="!photoUrl">account_circle</mat-icon>
+        <div class="header-logo-container">
+          <img alt="" [src]="photoUrl" *ngIf="photoUrl" class="profile-photo-button" />
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<mat-menu #userMenu="matMenu" xPosition="after" yPosition="below">
+  <button mat-menu-item [routerLink]="['/', 'profile']" *ngIf="isUserAuthenticated">
+    <span>
+      {{ 'HEADER.MENU.PROFILE' | translate }}
+    </span>
+  </button>
+  <button mat-menu-item [routerLink]="['/', 'history']" *ngIf="isUserAuthenticated">
+    <span>
+      {{ 'HEADER.MENU.HISTORY' | translate }}
+    </span>
+  </button>
+  <button mat-menu-item [routerLink]="['/', 'sign-up']" *ngIf="!isUserAuthenticated">
+    <span>
+      {{ 'HEADER.MENU.CREATE' | translate }}
+    </span>
+  </button>
+  <button mat-menu-item [routerLink]="['/', 'sign-in']" *ngIf="!isUserAuthenticated">
+    <span>
+      {{ 'HEADER.MENU.LOG_IN' | translate }}
+    </span>
+  </button>
+  <button mat-menu-item (click)="signOutUser()" *ngIf="isUserAuthenticated">
+    <span>
+      {{ 'HEADER.MENU.LOG_OUT' | translate }}
+    </span>
+  </button>
+</mat-menu>

@@ -1,0 +1,36 @@
+<div class="app-sign-ip-container">
+  <div class="sign-in-icon-header">
+    <mat-icon>account_circle</mat-icon>
+  </div>
+
+  <form class="sign-in-form" [formGroup]="signIpForm">
+    <mat-form-field>
+      <mat-label>
+        {{ 'AUTHENTICATION.PHONE_NUMBER' | translate }}
+      </mat-label>
+      <input matInput type="number" formControlName="phoneNumber" />
+      <mat-icon class="sign-in-icon" matSuffix>phone</mat-icon>
+      <mat-hint>{{ 'AUTHENTICATION.PHONE_NUMBER_HINT' | translate }}</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>
+        {{ 'AUTHENTICATION.PASSWORD' | translate }}
+      </mat-label>
+      <input matInput [type]="passwordFieldType" formControlName="password" />
+      <mat-icon class="sign-in-icon" matSuffix (click)="showPassword()">
+        {{ passwordFieldType === 'password' ? 'visibility' : 'visibility_off' }}
+      </mat-icon>
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button class="btn btn-primary" (click)="singInUser()">
+    {{ 'AUTHENTICATION.SIGN_IN_BUTTON' | translate }}
+  </button>
+
+  <div class="sign-in-logo-container">
+    <div class="sign-in-logo-centered">
+      <img alt="" [src]="logoUrl" />
+    </div>
+  </div>
+</div>

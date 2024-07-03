@@ -1,0 +1,16 @@
+.no-results-container {
+  min-height: calc(100% - 164px);
+  width: 100%;
+  text-align: center;
+  margin-top: 96px;
+
+  img {
+    width: 200px;
+    height: 200px;
+  }
+
+  p {
+    color: var(--primary-nude-300);
+    margin-top: 12px;
+  }
+}

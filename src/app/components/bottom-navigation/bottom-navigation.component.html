@@ -1,0 +1,35 @@
+<div class="bottom-navigation">
+  <div class="bottom-menu-items">
+    <div class="bottom-menu-item" [routerLink]="['/feed']" [ngClass]="{ 'active-menu-item': currentUrl === '/feed' }">
+      <mat-icon fontSet="material-icons-outlined" class="bottom-menu-icon">home</mat-icon>
+      <p class="bottom-menu-title">
+        {{ 'BOTTOM_NAVIGATION.HOME' | translate }}
+      </p>
+    </div>
+    <div class="bottom-menu-item" [routerLink]="['/', 'agenda']" [ngClass]="{ 'active-menu-item': currentUrl === '/agenda' }">
+      <mat-icon fontSet="material-icons-outlined" class="bottom-menu-icon">calendar_month</mat-icon>
+      <p class="bottom-menu-title">
+        {{ 'BOTTOM_NAVIGATION.AGENDA' | translate }}
+      </p>
+    </div>
+    <div class="bottom-menu-item" (click)="goToSchedule()" [ngClass]="{ 'active-menu-item': currentUrl === '/schedule' }">
+      <mat-icon class="bottom-menu-icon">add_circle</mat-icon>
+      <p class="bottom-menu-title">
+        {{ 'BOTTOM_NAVIGATION.SCHEDULE' | translate }}
+      </p>
+    </div>
+    <div class="bottom-menu-item" [routerLink]="['/', 'history']" [ngClass]="{ 'active-menu-item': currentUrl === '/history' }">
+      <mat-icon fontSet="material-icons-outlined" class="bottom-menu-icon">work_history</mat-icon>
+      <p class="bottom-menu-title">
+        {{ 'BOTTOM_NAVIGATION.HISTORY' | translate }}
+      </p>
+    </div>
+    <div class="bottom-menu-item" [routerLink]="['/', 'alerts']" [ngClass]="{ 'active-menu-item': currentUrl === '/alerts' }">
+      <div *ngIf="showNewNotificationsIndicator" class="new-notifications"></div>
+      <mat-icon class="bottom-menu-icon">{{ currentNotificationIcon }}</mat-icon>
+      <p class="bottom-menu-title">
+        {{ 'BOTTOM_NAVIGATION.ALERTS' | translate }}
+      </p>
+    </div>
+  </div>
+</div>

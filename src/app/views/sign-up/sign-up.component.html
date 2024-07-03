@@ -1,0 +1,57 @@
+<div class="app-sign-up-container">
+  <div class="create-user-icon-header">
+    <mat-icon>account_circle</mat-icon>
+  </div>
+
+  <form class="sign-up-form" [formGroup]="signUpForm">
+    <div class="two-columns-form">
+      <mat-form-field>
+        <mat-label>
+          {{ 'AUTHENTICATION.NAME' | translate }}
+        </mat-label>
+        <input matInput type="text" formControlName="name" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>
+          {{ 'AUTHENTICATION.LAST_NAME' | translate }}
+        </mat-label>
+        <input matInput type="text" formControlName="lastName" />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field>
+      <mat-label>
+        {{ 'AUTHENTICATION.PASSWORD' | translate }}
+      </mat-label>
+      <input matInput [type]="passwordFieldType" formControlName="password" />
+      <mat-icon class="sign-in-icon" matSuffix (click)="changePasswordFieldType()">
+        {{ passwordFieldType === 'password' ? 'visibility' : 'visibility_off' }}
+      </mat-icon>
+    </mat-form-field>
+
+    <div class="two-columns-form">
+      <mat-form-field>
+        <mat-label>
+          {{ 'AUTHENTICATION.PHONE_NUMBER' | translate }}
+        </mat-label>
+        <input matInput type="text" formControlName="phoneNumber" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>
+          {{ 'AUTHENTICATION.EMAIL' | translate }}
+        </mat-label>
+        <input matInput type="text" formControlName="email" />
+      </mat-form-field>
+    </div>
+  </form>
+
+  <button mat-raised-button class="btn btn-primary" (click)="singUpUser()">
+    {{ 'AUTHENTICATION.SIGN_UP_BUTTON' | translate }}
+  </button>
+
+  <div class="logo-container">
+    <div class="logo-centered">
+      <img alt="" [src]="logoUrl" />
+    </div>
+  </div>
+</div>

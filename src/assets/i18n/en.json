@@ -1,0 +1,215 @@
+{
+  "ALERTS": {
+    "TITLES": {
+      "CONFIRM": "Are you sure?",
+      "ERROR": "Ops!",
+      "INFO": "Information",
+      "SUCCESS": "Well done!",
+      "WARNING": "Warning!",
+      "ACCEPT": "Accept"
+    }
+  },
+  "SIDENAV": {
+    "TITLE": "Menu",
+    "SERVICES": "Services",
+    "AGENDA": "Agenda",
+    "LANGUAGE": "Language",
+    "LOG_OUT": "Log out"
+  },
+  "BOTTOM_NAVIGATION": {
+    "HOME": "Home",
+    "AGENDA": "Agenda",
+    "SCHEDULE": "Schedule",
+    "HISTORY": "History",
+    "MENU": "Menu",
+    "ALERTS": "Alerts"
+  },
+  "HEADER": {
+    "TITLES": {
+      "SIGN_IN": "Sign in",
+      "SIGN_UP": "Sign up",
+      "AGENDA": "Agenda",
+      "SCHEDULE": "Schedule",
+      "HISTORY": "Services history",
+      "SERVICES": "Services",
+      "PROFILE": "Profile",
+      "APPOINTMENT_DETAILS": "Details",
+      "ALERTS": "Alerts"
+    },
+    "MENU": {
+      "PROFILE": "Profile",
+      "HISTORY": "Services history",
+      "CREATE": "Sign up",
+      "LOG_IN": "Sign in",
+      "LOG_OUT": "Log out"
+    }
+  },
+  "AUTHENTICATION": {
+    "PHONE_NUMBER": "Phone number",
+    "PHONE_NUMBER_HINT": "Ten digits",
+    "NAME": "Name",
+    "LAST_NAME": "Last name",
+    "PASSWORD": "Password",
+    "EMAIL": "Email",
+    "SIGN_IN_BUTTON": "Sign in",
+    "SIGN_IN_ERROR_MESSAGE": "Error trying to sign in",
+    "SIGN_UP_BUTTON": "Sign up",
+    "SIGN_UP_ERROR_MESSAGE": "Error trying to sign up"
+  },
+  "INTERCEPTOR": {
+    "WRONG_SIGN_IN_CREDENTIALS": "Unable to find user",
+    "INVALID_OR_EXPIRED_TOKEN": "Invalid or expired session",
+    "UNKNOWN_ERROR": "Error connecting to the server"
+  },
+  "SCHEDULE": {
+    "STEP_ONE_ERROR": "Date and time are required",
+    "STEP_TWO_ERROR": "Service to schedule is required",
+    "SELECT_THE_DATE": "Select the date",
+    "SELECT_THE_TIME": "Select the time",
+    "DATE": "Date",
+    "NEXT": "Next",
+    "SELECT_YOUR_SERVICE": "Select your service",
+    "SELECT_AN_OPTION": "Select an option",
+    "REVIEW": "Review the appointment",
+    "DATE_SELECTED": "Date selected:",
+    "TIME_SELECTED": "Time selected:",
+    "SERVICE_SELECTED": "Service selected:",
+    "AVERAGE_TIME": "Average time:",
+    "COST": "Cost:",
+    "HOURS": " hrs.",
+    "MINUTES": "min.",
+    "SCHEDULE_APPOINTMENT": "Schedule",
+    "FORM_ERROR": "Error in fields, validate",
+    "APPOINTMENT_CREATED": "Appointment created",
+    "BUSY": "Busy",
+    "HOUR_UNAVAILABLE": "Selected time is not available, select other time",
+    "STEP_ADMIN_ERROR": "Client's data incomplete, verify",
+    "CLIENT_DATA": "Client's information",
+    "NAME": "Name",
+    "LAST_NAME": "Last name",
+    "PHONE": "Phone",
+    "APPOINTMENT_CREATED_SUCCESS": "Appointment successfully created",
+    "STEP_ADMIN_CLIENT_REGISTERED": "Client Registered",
+    "STEP_ADMIN_NEW_CLIENT": "New Client"
+  },
+  "HISTORY": {
+    "TO_BE_WORKED": "To be worked",
+    "SERVICE_PERFORMED": "Service performed",
+    "TIME_LAPSED": "Time",
+    "COST": "Cost",
+    "DATE": "Date",
+    "TIME": "Time",
+    "FEEDBACK_REQUEST_SUCCESS": "Feedback request sent",
+    "FEEDBACK_REQUEST_REJECT": "Feedback rejected",
+    "FEEDBACK_REQUEST_SAVED": "Feedback saved",
+    "USER": "Client"
+  },
+  "PROFILE": {
+    "NAME": "Name",
+    "LAST_NAME": "Last name",
+    "EMAIL": "Email",
+    "PHONE_NUMBER": "Phone number",
+    "PHONE_NUMBER_HINT": "*Phone number cannot be modified.",
+    "UPDATE": "Update",
+    "FILE_SELECTED_NOT_SUPPORTED": "File format selected not supported",
+    "MISSING_DATA": "Incorrect or missing fields to fill",
+    "PROFILE_UPDATED": "Profile updated successfully",
+    "PROFILE_NOT_UPDATED": "Error updating profile, try again later",
+    "PROFILE_IMAGE_UPLOAD_ERROR": "Error uploading image, try again later",
+    "PROFILE_IMAGE_UPLOAD_SUCCESS": "Profile image updated successfully",
+    "REMOVE_PREVIOUS_PROFILE_IMAGE_ERROR": "Error removing last image"
+  },
+  "SERVICES": {
+    "EYEBROW": "Eyebrow",
+    "MAKEUP": "Makeup",
+    "FACE_WAX": "Face with wax",
+    "FACE_THREAD": "Face with thread",
+    "EYELASH": "Eyelash"
+  },
+  "HOME": {
+    "SECTION_ONE": {
+      "TITLE": "Transform your look",
+      "DESCRIPTION": "Enhance your beauty with professional makeup services.",
+      "SCHEDULE_APPOINTMENT": "Schedule appointment",
+      "CREATE_ACCOUNT": "Create account"
+    },
+    "SECTION_TWO": {
+      "TITLE": "About Me",
+      "DESCRIPTION": "I'm a professional makeup artist based in Mexico. With years of experience in the industry, I'm dedicated to provide exceptional makeup services for multiple occasions."
+    },
+    "SECTION_THREE": {
+      "TITLE": "Services",
+      "SERVICE_BRIDAL_MAKEUP": "Bridal makeup",
+      "SERVICE_MICRO_BLADING": "Eyebrow micro blading",
+      "SERVICE_SPECIAL_OCCASION_MAKEUP": "Custom make up",
+      "SERVICE_MAKEUP_LESSONS": "Makeup lessons",
+      "SERVICES_MANY_MORE": "...And a lot of services to discover!"
+    },
+    "SECTION_FOUR": {
+      "TITLE": "Contact Us Today",
+      "DESCRIPTION": "Let us know how we can help you. Fill out the contact form below and we'll get back to you as soon as possible.",
+      "FORM_NAME": "Name",
+      "FORM_PHONE_NUMBER": "Phone number",
+      "FORM_MESSAGE": "Message",
+      "SEND": "Send",
+      "CONTACT_REQUEST_SUCCESS": "We're saved your information, soon you'll be reached",
+      "CONTACT_REQUEST_ERROR": "Error trying to save, try again later",
+      "CONTACT_REQUEST_DUPLICATED": "The information provided already exists, wait to be reached",
+      "CHARACTERS_REMAINING": "Characters remaining "
+    },
+    "SECTION_FIVE": {
+      "TITLE": "Professional career",
+      "DESCRIPTION": "Makeup artist and micropigmentation artist for Silvia Galván for 9 years.",
+      "CERTIFICATIONS": {
+        "TITLE": "Certifications",
+        "CERTIFICATION1": "Eyebrow design by Silvia Galván Image Studio.",
+        "CERTIFICATION2": "Microblading by Silva Galván Image Studio.",
+        "CERTIFICATION3": "Master class bridal and social makeup by Javier de la Rosa."
+      },
+      "COURSES": {
+        "TITLE": "Courses",
+        "COURSE1": "Basic micropigmentation course.",
+        "COURSE2": "Microblading training with Jessica Luna.",
+        "COURSE3": "Jr. Artist & Brow designer by Grace Estrada (quality standards and microblading technique).",
+        "COURSE4": "Hygiene and asepsis course.",
+        "COURSE5": "Training diploma in biosafety techniques.",
+        "COURSE6": "IDIP Professional Makeup."
+      }
+    },
+    "SECTION_SIX": {
+      "TITLE": "Location"
+    }
+  },
+  "NO_RESULTS": {
+    "GENERIC_TITLE": "No results found in this view"
+  },
+  "APPOINTMENT_DETAILS": {
+    "STATUS": "Status",
+    "CREATED": "New",
+    "CONFIRMED": "Confirmed",
+    "REJECTED": "Rejected",
+    "FEEDBACK": "Feedback",
+    "COMPLETED": "Completed",
+    "PENDING": "Pending",
+    "DATE_SELECTED": "Date",
+    "TIME_SELECTED": "Time",
+    "SERVICE_SELECTED": "Service",
+    "AVERAGE_TIME": "Duration",
+    "COST": "Cost",
+    "REJECT": "Reject",
+    "CONFIRM": "Confirm"
+  },
+  "AGENDA": {
+    "USER_APPOINTMENTS_SUCCESS": "User appointments retrieved successfully",
+    "APPOINTMENTS_BY_DATE_SUCCESS": "Appointments by date retrieved successfully",
+    "APPOINTMENT_STATUS_CONFIRMED": "Appointment confirmed",
+    "APPOINTMENT_STATUS_REJECTED": "Appointment rejected"
+  },
+  "ALERTS_VIEW": {
+    "MARK_AS_READ": "Mark as read",
+    "DELETE": "Delete notification",
+    "MARK_ALL_CONFIRM_TITLE": "¿Mark all alerts as read?",
+    "DELETE_ALL_CONFIRM_TITLE": "¿Delete all alerts?",
+    "CONFIRM_MESSAGE": "This action can not to be undone"
+  }
+}

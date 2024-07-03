@@ -1,0 +1,80 @@
+.user-profile-container {
+  .profile-photo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+    margin-bottom: 24px;
+
+    .profile-photo {
+      width: 144px;
+      height: 144px;
+      border-radius: 50%;
+      border: 1px solid var(--primary-nude-300);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 142px;
+        height: 142px;
+        border-radius: 50%;
+      }
+
+      .default-profile {
+        width: 142px;
+        height: 142px;
+        font-size: 142px;
+        color: var(--primary-nude-300);
+      }
+
+      .edit-photo-container {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--primary-nude-300);
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .user-data-form {
+    margin-bottom: 48px;
+
+    .user-name-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      mat-form-field {
+        width: 50%;
+
+        &:first-child {
+          margin-right: 12px;
+        }
+      }
+    }
+
+    .contact-user-data {
+      mat-form-field {
+        width: 100%;
+
+        .mat-mdc-form-field-hint {
+          color: var(--primary-nude-500);
+        }
+      }
+    }
+  }
+
+  .btn-primary {
+    margin-bottom: 24px;
+  }
+}

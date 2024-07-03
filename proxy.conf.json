@@ -1,0 +1,14 @@
+{
+  "/users": {
+    "target": "https://services.bsg-makeup.com/services/api/v1",
+    "secure": false
+  },
+  "/auth/sign-in": {
+    "target": "https://services.bsg-makeup.com/services/api/v1",
+    "secure": false
+  },
+  "/auth/sign-up": {
+    "target": "https://services.bsg-makeup.com/services/api/v1",
+    "secure": false
+  }
+}

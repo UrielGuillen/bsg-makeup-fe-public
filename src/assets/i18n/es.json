@@ -1,0 +1,215 @@
+{
+  "ALERTS": {
+    "TITLES": {
+      "CONFIRM": "¿Estás seguro de realizar esta acción?",
+      "ERROR": "Ups!",
+      "INFO": "Información",
+      "SUCCESS": "¡Éxito!",
+      "WARNING": "¡Advertencia!",
+      "ACCEPT": "Aceptar"
+    }
+  },
+  "SIDENAV": {
+    "TITLE": "Menu",
+    "SERVICES": "Servicios",
+    "AGENDA": "Agenda",
+    "LANGUAGE": "Lenguaje",
+    "LOG_OUT": "Cerrar sesión"
+  },
+  "BOTTOM_NAVIGATION": {
+    "HOME": "Inicio",
+    "AGENDA": "Agenda",
+    "SCHEDULE": "Agendar",
+    "HISTORY": "Historial",
+    "MENU": "Menu",
+    "ALERTS": "Alertas"
+  },
+  "HEADER": {
+    "TITLES": {
+      "SIGN_IN": "Iniciar sesión",
+      "SIGN_UP": "Crear cuenta",
+      "AGENDA": "Agenda",
+      "SCHEDULE": "Agendar cita",
+      "HISTORY": "Historial de servicios",
+      "SERVICES": "Servicios",
+      "PROFILE": "Mi perfil",
+      "APPOINTMENT_DETAILS": "Detalles",
+      "ALERTS": "Alertas"
+    },
+    "MENU": {
+      "PROFILE": "Perfil",
+      "HISTORY": "Historial de servicios",
+      "CREATE": "Crear cuenta",
+      "LOG_IN": "Iniciar sesión",
+      "LOG_OUT": "Cerrar sesión"
+    }
+  },
+  "AUTHENTICATION": {
+    "PHONE_NUMBER": "Número de telefono",
+    "PHONE_NUMBER_HINT": "A diez dígitos",
+    "NAME": "Nombre",
+    "LAST_NAME": "Apellido",
+    "PASSWORD": "Contraseña",
+    "EMAIL": "Correo electrónico",
+    "SIGN_IN_BUTTON": "Iniciar sesión",
+    "SIGN_IN_ERROR_MESSAGE": "Error al iniciar sesión",
+    "SIGN_UP_BUTTON": "Crear cuenta",
+    "SIGN_UP_ERROR_MESSAGE": "Error al crear la cuenta"
+  },
+  "INTERCEPTOR": {
+    "WRONG_SIGN_IN_CREDENTIALS": "Usuario o contraseña incorrectas",
+    "INVALID_OR_EXPIRED_TOKEN": "Sesión invalida o expirada",
+    "UNKNOWN_ERROR": "Error conectando al servidor"
+  },
+  "SCHEDULE": {
+    "STEP_ONE_ERROR": "Fecha y horario son requeridos",
+    "STEP_TWO_ERROR": "Servicio a agendar es requerido",
+    "SELECT_THE_DATE": "Selecciona la fecha",
+    "SELECT_THE_TIME": "Selecciona la hora",
+    "DATE": "Fecha",
+    "NEXT": "Siguiente",
+    "SELECT_YOUR_SERVICE": "Selecciona un servicio",
+    "SELECT_AN_OPTION": "Selecciona una opción",
+    "REVIEW": "Revisa tu cita",
+    "DATE_SELECTED": "Fecha seleccionada:",
+    "TIME_SELECTED": "Horario seleccionado:",
+    "SERVICE_SELECTED": "Servicio solicitado:",
+    "AVERAGE_TIME": "Duración del servicio:",
+    "COST": "Costo:",
+    "HOURS": " hrs.",
+    "MINUTES": "min.",
+    "SCHEDULE_APPOINTMENT": "Agendar Cita",
+    "FORM_ERROR": "Error en los campos, verificar",
+    "APPOINTMENT_CREATED": "Cita creada",
+    "BUSY": "Ocupado",
+    "HOUR_UNAVAILABLE": "El servicio seleccionado no puede realizarse en el horario seleccionado, seleccione otro",
+    "STEP_ADMIN_ERROR": "Datos del cliente incompletos",
+    "CLIENT_DATA": "Datos del cliente",
+    "NAME": "Nombre",
+    "LAST_NAME": "Apellido",
+    "PHONE": "Teléfono",
+    "APPOINTMENT_CREATED_SUCCESS": "Cita creada exitosamente",
+    "STEP_ADMIN_CLIENT_REGISTERED": "Cliente registrado",
+    "STEP_ADMIN_NEW_CLIENT": "Cliente nuevo"
+  },
+  "HISTORY": {
+    "TO_BE_WORKED": "Por iniciar",
+    "SERVICE_PERFORMED": "Servicio realizado",
+    "TIME_LAPSED": "Tiempo",
+    "COST": "Costo",
+    "DATE": "Fecha",
+    "TIME": "Hora",
+    "FEEDBACK_REQUEST_SUCCESS": "Se envió solicitud de reseña",
+    "FEEDBACK_REQUEST_REJECT": "Reseña rechazada",
+    "FEEDBACK_REQUEST_SAVED": "Reseña guardada",
+    "USER": "Cliente"
+  },
+  "PROFILE": {
+    "NAME": "Nombre",
+    "LAST_NAME": "Apellido",
+    "EMAIL": "Correo electrónico",
+    "PHONE_NUMBER": "Número de telefono",
+    "PHONE_NUMBER_HINT": "*Número de telefono no puede actualizarse.",
+    "UPDATE": "Actualizar",
+    "FILE_SELECTED_NOT_SUPPORTED": "Tipo de archivo no válido",
+    "MISSING_DATA": "Campos incorrectos o vacíos",
+    "PROFILE_UPDATED": "Perfil actualizado correctamente",
+    "PROFILE_NOT_UPDATED": "Error actualizando perfil, intenta más tarde",
+    "PROFILE_IMAGE_UPLOAD_ERROR": "Error actualizando imagen, intenta más tarde",
+    "PROFILE_IMAGE_UPLOAD_SUCCESS": "Imagen de perfil actualizada correctamente",
+    "REMOVE_PREVIOUS_PROFILE_IMAGE_ERROR": "Error eliminando foto anterior"
+  },
+  "SERVICES": {
+    "EYEBROW": "Ceja",
+    "MAKEUP": "Maquillaje",
+    "FACE_WAX": "Rostro con cera",
+    "FACE_THREAD": "Rostro con hilo",
+    "EYELASH": "Pestaña"
+  },
+  "HOME": {
+    "SECTION_ONE": {
+      "TITLE": "Transforma tu mirada",
+      "DESCRIPTION": "Realza tu belleza con servicios profesionales. Desde atrevido y glamoroso hasta sutil y elegante, permítenos ayudarte a lograr el look que deseas para cualquier ocasión.",
+      "SCHEDULE_APPOINTMENT": "Agendar cita",
+      "CREATE_ACCOUNT": "Crear cuenta"
+    },
+    "SECTION_TWO": {
+      "TITLE": "Sobre mí",
+      "DESCRIPTION": "Soy una micropigmentadora y maquillista profesional en México, con 12 años de experiencia en la industria, me dedico a brindar servicios de rostro como micropigmentaciones, deplicaiones y maquillajes."
+    },
+    "SECTION_THREE": {
+      "TITLE": "Servicios",
+      "SERVICE_BRIDAL_MAKEUP": "Maquillaje de novia",
+      "SERVICE_MICRO_BLADING": "Microblading en cejas",
+      "SERVICE_SPECIAL_OCCASION_MAKEUP": "Maquillaje personalizado",
+      "SERVICE_MAKEUP_LESSONS": "Lecciones de auto maquillaje",
+      "SERVICES_MANY_MORE": "¡Y muchos servicios más!"
+    },
+    "SECTION_FOUR": {
+      "TITLE": "Contáctanos",
+      "DESCRIPTION": "Permítenos saber en qué te podemos ayudar. Complete el formulario de contacto a continuación y nos comunicaremos con usted lo antes posible.",
+      "FORM_NAME": "Nombre",
+      "FORM_PHONE_NUMBER": "Número de teléfono",
+      "FORM_MESSAGE": "Mensaje",
+      "SEND": "Enviar",
+      "CONTACT_REQUEST_SUCCESS": "La información se ha almacenado, pronto te contactaremos",
+      "CONTACT_REQUEST_ERROR": "La información no se ha almacenado, intenta más tarde",
+      "CONTACT_REQUEST_DUPLICATED": "El número de teléfono ya existe, espere a ser contactado",
+      "CHARACTERS_REMAINING": "Caracteres restantes "
+    },
+    "SECTION_FIVE": {
+      "TITLE": "Carrera profesional",
+      "DESCRIPTION": "Maquillista y micropigmentadora para Silvia Galván por 9 años.",
+      "CERTIFICATIONS": {
+        "TITLE": "Certificaciones",
+        "CERTIFICATION1": "Diseño de ceja por Silvia Galván Image Studio.",
+        "CERTIFICATION2": "Microblading por Silva Galván Image Studio.",
+        "CERTIFICATION3": "Master class maquillaje novias y social por Javier de la Rosa."
+      },
+      "COURSES": {
+        "TITLE": "Cursos",
+        "COURSE1": "Curso básico de micropigmentación.",
+        "COURSE2": "Microblading training con Jessica Luna.",
+        "COURSE3": "Jr. Artist & Brow designer por Grace Estrada (normas de calidad y técnica de microblading).",
+        "COURSE4": "Curso de higiene y asepsia.",
+        "COURSE5": "Diploma de capacitación en técnicas de bioseguridad.",
+        "COURSE6": "Maquillaje profesional IDIP."
+      }
+    },
+    "SECTION_SIX": {
+      "TITLE": "Ubicación"
+    }
+  },
+  "NO_RESULTS": {
+    "GENERIC_TITLE": "Sin resultados en esta vista"
+  },
+  "APPOINTMENT_DETAILS": {
+    "STATUS": "Status de la cita",
+    "CREATED": "Nueva",
+    "CONFIRMED": "Confirmada",
+    "REJECTED": "Cancelada",
+    "FEEDBACK": "Comentarios",
+    "COMPLETED": "Completada",
+    "PENDING": "Pendiente",
+    "DATE_SELECTED": "Fecha",
+    "TIME_SELECTED": "Horario",
+    "SERVICE_SELECTED": "Servicio",
+    "AVERAGE_TIME": "Duración",
+    "COST": "Costo",
+    "REJECT": "Rechazar",
+    "CONFIRM": "Confirmar"
+  },
+  "AGENDA": {
+    "USER_APPOINTMENTS_SUCCESS": "Citas por usuario extraídas correctamente",
+    "APPOINTMENTS_BY_DATE_SUCCESS": "Citas por fecha extraídas correctamente",
+    "APPOINTMENT_STATUS_CONFIRMED": "Cita confirmada correctamente",
+    "APPOINTMENT_STATUS_REJECTED": "Cita rechazada correctamente"
+  },
+  "ALERTS_VIEW": {
+    "MARK_AS_READ": "Marcar como leída",
+    "DELETE": "Eliminar notificación",
+    "MARK_ALL_CONFIRM_TITLE": "¿Marcar las alertas como leídas?",
+    "DELETE_ALL_CONFIRM_TITLE": "¿Eliminar todas las alertas?",
+    "CONFIRM_MESSAGE": "Esta acción no se puede deshacer"
+  }
+}
